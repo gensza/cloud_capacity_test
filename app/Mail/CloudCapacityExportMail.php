@@ -26,8 +26,7 @@ class CloudCapacityExportMail extends Mailable
     public function build()
     {
         return $this->subject('Cloud Capacity Export Completed')
-            ->html('<p>Export Cloud Capacity berhasil dibuat.</p>')
-            ->html('<p>Silakan download file terlampir..</p>')
+            ->html('<p>Berikut terlampir file excel yang dibutuhkan From Mohamad Gensza Vernando </p>')
             ->attach(storage_path('app/' . $this->filePath));
     }
 
@@ -37,7 +36,7 @@ class CloudCapacityExportMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Cloud Capacity Export Mail',
+            subject: 'Report Data Cloud Capacity',
         );
     }
 

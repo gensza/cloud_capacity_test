@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Mail\CloudCapacityExportMail;
 
-use function Laravel\Prompts\alert;
-
 class DashboardController extends Controller
 {
     public function index()
@@ -35,7 +33,7 @@ class DashboardController extends Controller
 
     public function downloadExcel()
     {
-        if (env('MAIL_USERNAME') == null) {
+        if (env('NOTIFICATION_EMAIL') == null) {
             return Excel::download(new CloudCapacityExport, 'cloud_capacity.xlsx');
         }
 
